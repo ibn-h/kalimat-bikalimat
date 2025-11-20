@@ -5,8 +5,6 @@ function Home() {
     <div>
       <h1>The Holy Quran</h1>
       <div id="chapters-container"></div>
-
-      
     </div>
   );
 }

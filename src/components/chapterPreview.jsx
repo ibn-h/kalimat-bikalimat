@@ -1,8 +1,8 @@
 import React from "react";
 
-function surahPreview({ number, nameInLatin, nameInEnglish, ayahsAmount }) {
+function chapterPreview({ number, nameInLatin, nameInEnglish, ayahsAmount }) {
   return (
-    <div>
+    <div id="chapter-preview">
       <div>{number}</div>
       <div>
         <h3>{nameInEnglish}</h3>
@@ -13,4 +13,4 @@ function surahPreview({ number, nameInLatin, nameInEnglish, ayahsAmount }) {
   );
 }
 
-export default surahPreview;
+export default chapterPreview;
