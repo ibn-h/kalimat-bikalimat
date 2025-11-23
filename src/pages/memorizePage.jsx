@@ -1,7 +1,7 @@
 import React from "react";
 
-function memorizePage() {
-  return <div>memorizePage</div>;
+function MemorizePage() {
+  return <div>MemorizePage</div>;
 }
 
-export default memorizePage;
+export default MemorizePage;

@@ -9,15 +9,47 @@ function SurahPage() {
   let { id } = useParams();
   id = Number(id);
 
+  if (isNaN(id) || id > 114 || id < 1) {
+    return <div>Unable to get Surah</div>;
+  }
+
+  useEffect(() => {
+    fetch(`https://quranapi.pages.dev/api/${id}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        setAyahData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  }, []);
+
   return (
     <div className="bg-amber-50 min-h-screen p-8">
       <div className="flex flex-col gap-10 items-center justify-center">
         <h1 className="text-5xl">{ayahData.surahNameTranslation}</h1>
-        <div>
-          <button className="bg-gray-300 cursor-pointer">Memorize</button>
+        <div className="flex gap-5">
+          <a
+            href={"/" + Math.max(Number(id) - 1, 1)}
+            className="bg-gray-300 cursor-pointer"
+          >
+            {"<"}
+          </a>
+          <a href="/" className="bg-gray-300 cursor-pointer">
+            Go Back
+          </a>
+          <a href={"/memorize/" + id} className="bg-gray-300 cursor-pointer">
+            Memorize
+          </a>
+          <a
+            href={"/" + Math.min(Number(id) + 1, 114)}
+            className="bg-gray-300 cursor-pointer"
+          >
+            {">"}
+          </a>
         </div>
-        
-        <AyahContainer id={id} />
+
+        <AyahContainer id={id} ayahData={ayahData} />
       </div>
     </div>
   );
