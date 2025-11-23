@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 
-function Ayah({ ayahInArabic, ayahInEnglish }) {
+function Ayah({ ayahInArabic, ayahInEnglish, surahNumber, ayahNumber }) {
   return (
-    <div>
-      <div className="ayahs-in-arabic">{ayahInArabic[0]}</div>
-      <div className="translated-ayahs">{ayahInEnglish[0]}</div>
+    <div className="flex bg-amber-50 w-fit py-8 gap-3 border-b border-[#00000025]">
+      <div className="bg-amber-50">
+        {surahNumber}:{ayahNumber}
+      </div>
+      <div className="w-[750px] flex flex-col gap-3 rounded-lg">
+        <div className="ayahs-in-arabic flex justify-end text-right">
+          {ayahInArabic}
+        </div>
+        <div className="translated-ayahs text-left">{ayahInEnglish}</div>
+      </div>
     </div>
   );
 }

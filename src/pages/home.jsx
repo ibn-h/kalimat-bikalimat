@@ -12,8 +12,6 @@ function Home() {
       .then((data) => {
         setChapters(data);
         setLoading(false);
-
-        console.log(data);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
