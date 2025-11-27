@@ -22,7 +22,10 @@ function Home() {
   return (
     <div className="bg-amber-50 flex flex-col gap-10 items-center justify-center p-8">
       <h1 className="text-6xl">The Holy Quran</h1>
-      <div id="chapters-container" className="grid grid-cols-3 gap-3">
+      <div
+        id="chapters-container"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+      >
         {chapters.map((chapterData, index) => (
           <ChapterPreview
             key={index}
