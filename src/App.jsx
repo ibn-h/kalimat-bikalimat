@@ -6,11 +6,14 @@ import MemorizePage from "./pages/memorizePage.jsx";
 
 function App() {
   return (
-    <Router basename="/kalimat-bikalimat">
+    <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/:id" element={<SurahPage />} />
-        <Route path="/memorize/:id" element={<MemorizePage />} />
+        <Route path="/kalimat-bikalimat" element={<HomePage />} />
+        <Route path="/kalimat-bikalimat/:id" element={<SurahPage />} />
+        <Route
+          path="/kalimat-bikalimat/memorize/:id"
+          element={<MemorizePage />}
+        />
       </Routes>
     </Router>
   );
