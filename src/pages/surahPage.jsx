@@ -3,6 +3,7 @@ import { data, Navigate, useParams } from "react-router-dom";
 
 import AyahContainer from "../components/ayahContainer.jsx";
 import fetchAyahData from "../utils/fetchAyahData.jsx";
+import SurahNavigation from "../components/surahNavigation.jsx";
 
 function SurahPage() {
   const [ayahData, setAyahData] = useState({});
@@ -29,26 +30,7 @@ function SurahPage() {
     <div className="bg-amber-50 min-h-screen p-8">
       <div className="flex flex-col gap-10 items-center justify-center">
         <h1 className="text-5xl">{ayahData.surahNameTranslation}</h1>
-        <div className="flex gap-5">
-          <a
-            href={"/" + Math.max(Number(id) - 1, 1)}
-            className="bg-gray-300 cursor-pointer"
-          >
-            {"<"}
-          </a>
-          <a href="/" className="bg-gray-300 cursor-pointer">
-            Go Back
-          </a>
-          <a href={"/memorize/" + id} className="bg-gray-300 cursor-pointer">
-            Memorize
-          </a>
-          <a
-            href={"/" + Math.min(Number(id) + 1, 114)}
-            className="bg-gray-300 cursor-pointer"
-          >
-            {">"}
-          </a>
-        </div>
+        <SurahNavigation id={1} />
 
         <AyahContainer id={id} ayahData={ayahData} />
       </div>
