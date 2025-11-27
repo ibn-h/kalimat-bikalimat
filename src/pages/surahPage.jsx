@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { data, Navigate, useParams } from "react-router-dom";
 
 import AyahContainer from "../components/ayahContainer.jsx";
+import fetchAyahData from "../utils/fetchAyahData.jsx";
 
 function SurahPage() {
   const [ayahData, setAyahData] = useState({});
@@ -14,7 +15,7 @@ function SurahPage() {
   }
 
   useEffect(() => {
-    fetch(`https://quranapi.pages.dev/api/${id}.json`)
+    fetchAyahData(id)
       .then((response) => response.json())
       .then((data) => {
         setAyahData(data);
@@ -22,7 +23,7 @@ function SurahPage() {
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="bg-amber-50 min-h-screen p-8">
