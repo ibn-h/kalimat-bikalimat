@@ -35,16 +35,18 @@ function MemorizePage() {
         <h1 className="text-5xl">Memorize {ayahData.surahNameTranslation}</h1>
         <SurahNavigation id={id} />
         <AyahContainer id={id} ayahData={ayahData} ayahsToShow={ayahsToShow} />
-        <button
-          onClick={() =>
-            setAyahsToShow((prev) =>
-              Math.min(prev + 1, ayahData.totalAyah || 1)
-            )
-          }
-          className="bg-gray-300 cursor-pointer"
-        >
-          Next Ayah
-        </button>
+        {ayahsToShow < ayahData.totalAyah && (
+          <button
+            onClick={() =>
+              setAyahsToShow((prev) =>
+                Math.min(prev + 1, ayahData.totalAyah || 1)
+              )
+            }
+            className="bg-gray-300 cursor-pointer"
+          >
+            Next Ayah
+          </button>
+        )}
       </div>
     </div>
   );

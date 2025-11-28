@@ -8,10 +8,10 @@ import SurahNavigation from "../components/surahNavigation.jsx";
 function SurahPage() {
   const [ayahData, setAyahData] = useState({});
 
-  let { id } = useParams();
-  id = Number(id);
+  const { id } = useParams();
+  const surahID = Number(id);
 
-  if (isNaN(id) || id > 114 || id < 1) {
+  if (isNaN(surahID) || surahID > 114 || surahID < 1) {
     return <div>Unable to get Surah</div>;
   }
 
@@ -30,9 +30,9 @@ function SurahPage() {
     <div className="bg-amber-50 min-h-screen p-8">
       <div className="flex flex-col gap-10 items-center justify-center">
         <h1 className="text-5xl">{ayahData.surahNameTranslation}</h1>
-        <SurahNavigation id={1} />
+        <SurahNavigation id={surahID} />
 
-        <AyahContainer id={id} ayahData={ayahData} />
+        <AyahContainer id={surahID} ayahData={ayahData} />
       </div>
     </div>
   );

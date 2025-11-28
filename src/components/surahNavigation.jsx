@@ -4,7 +4,7 @@ function SurahNavigation({ id }) {
   return (
     <div className="flex gap-5">
       <a
-        href={"/" + Math.max(Number(id) - 1, 1)}
+        href={"/" + Math.max(id - 1, 1)}
         className="bg-gray-300 cursor-pointer"
       >
         {"<"}
@@ -16,7 +16,7 @@ function SurahNavigation({ id }) {
         Memorize
       </a>
       <a
-        href={"/" + Math.min(Number(id) + 1, 114)}
+        href={"/" + Math.min(id + 1, 114)}
         className="bg-gray-300 cursor-pointer"
       >
         {">"}
