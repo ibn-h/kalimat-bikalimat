@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { data, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import AyahContainer from "../components/ayahContainer.jsx";
 import fetchAyahData from "../utils/fetchAyahData.jsx";
@@ -11,11 +11,11 @@ function SurahPage() {
   const { id } = useParams();
   const surahID = Number(id);
 
-  if (isNaN(surahID) || surahID > 114 || surahID < 1) {
-    return <div>Unable to get Surah</div>;
-  }
-
   useEffect(() => {
+    if (isNaN(surahID) || surahID > 114 || surahID < 1) {
+      return;
+    }
+
     fetchAyahData(id)
       .then((response) => response.json())
       .then((data) => {
@@ -24,7 +24,11 @@ function SurahPage() {
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
-  }, [id]);
+  }, [id, surahID]);
+
+  if (isNaN(surahID) || surahID > 114 || surahID < 1) {
+    return <div>Unable to get Surah</div>;
+  }
 
   return (
     <div className="bg-amber-50 min-h-screen p-8">

@@ -8,13 +8,14 @@ function App() {
   return (
     <Router
       basename={
+        // eslint-disable-next-line no-undef
         process.env.NODE_ENV === "production" ? "/kalimat-bikalimat/" : "/"
       }
     >
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<SurahPage />} />
-        <Route path="/memorize/:id" element={<MemorizePage />} />
+        <Route path="/:id/memorize" element={<MemorizePage />} />
       </Routes>
     </Router>
   );

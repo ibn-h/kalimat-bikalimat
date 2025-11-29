@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 import AyahContainer from "../components/ayahContainer.jsx";
 import fetchAyahData from "../utils/fetchAyahData.jsx";
-import SurahNavigation from "../components/surahNavigation.jsx";
 
 function MemorizePage() {
   const [ayahData, setAyahData] = useState({});
@@ -14,11 +13,11 @@ function MemorizePage() {
   let { id } = useParams();
   id = Number(id);
 
-  if (isNaN(id) || id > 114 || id < 1) {
-    return <div>Unable to get Surah</div>;
-  }
-
   useEffect(() => {
+    if (isNaN(id) || id > 114 || id < 1) {
+      return;
+    }
+
     fetchAyahData(id)
       .then((response) => response.json())
       .then((data) => {
@@ -29,11 +28,17 @@ function MemorizePage() {
       });
   }, [id]);
 
+  if (isNaN(id) || id > 114 || id < 1) {
+    return <div>Unable to get Surah</div>;
+  }
+
   return (
     <div className="bg-amber-50 min-h-screen p-8">
       <div className="flex flex-col gap-10 items-center justify-center">
         <h1 className="text-5xl">Memorize {ayahData.surahNameTranslation}</h1>
-        <SurahNavigation id={id} />
+        <a href={`/${id}`} className="bg-red-300 cursor-pointer">
+          Stop
+        </a>
         <AyahContainer id={id} ayahData={ayahData} ayahsToShow={ayahsToShow} />
         {ayahsToShow < ayahData.totalAyah && (
           <button

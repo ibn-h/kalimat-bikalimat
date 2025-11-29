@@ -12,7 +12,7 @@ function SurahNavigation({ id }) {
       <a href="/" className="bg-gray-300 cursor-pointer">
         Go Back
       </a>
-      <a href={"/memorize/" + id} className="bg-gray-300 cursor-pointer">
+      <a href={`/${id}/memorize`} className="bg-gray-300 cursor-pointer">
         Memorize
       </a>
       <a
