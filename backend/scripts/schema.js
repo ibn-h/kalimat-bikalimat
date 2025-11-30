@@ -1,7 +1,7 @@
-import { database } from "./database.js";
+import { initializeDatabase } from "./database.js";
 
 async function setup() {
-  const db = await database();
+  const db = await initializeDatabase();
 
   await db.exec(`
     CREATE TABLE IF NOT EXISTS surahs (
