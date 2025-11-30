@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@fontface {
+  font-family: Uthmanic Hafs Regular;
+  src: url("Uthmanic Hafs Regular.otf") format("opentype");
+}
+
+@theme {
+  --font-arabic: "Uthmanic Hafs Regular", serif;
+}
+
+#root {
+  @apply bg-amber-50;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
