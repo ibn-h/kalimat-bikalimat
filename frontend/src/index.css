@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @fontface {
@@ -7,12 +8,25 @@
 
 @theme {
   --font-arabic: "Uthmanic Hafs Regular", serif;
-}
 
-#root {
-  @apply bg-amber-50;
+  --color-frost-whisper: rgb(250, 255, 253);
+  --color-obsidian-black: rgb(1, 1, 1);
+  --color-graphite-gray: rgb(95, 95, 95);
+  --color-cloud-alloy: rgb(187, 188, 188);
+  --color-amber-flame: rgb(238, 111, 55);
+  --color-golden-dawn: rgb(254, 215, 109);
+  --color-celadon-blue: rgb(42, 135, 172);
+  --color-sky-surge: rgb(97, 198, 240);
+  --color-neon-mint: rgb(0, 230, 148);
+  --color-earth-ember: rgb(92, 51, 0);
+
+  --color-black-95: rgba(0, 0, 0, 0.95);
+  --color-black-90: rgba(0, 0, 0, 0.9);
+  --color-black-85: rgba(0, 0, 0, 0.85);
+  --color-black-75: rgba(0, 0, 0, 0.75);
+  --color-black-50: rgba(0, 0, 0, 0.5);
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
 }

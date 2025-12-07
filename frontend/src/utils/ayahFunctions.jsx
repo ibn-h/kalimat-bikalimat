@@ -1,3 +1,29 @@
+const API = "http://localhost:3000";
+
+async function fetchAyahData(surahNumber) {
+  const URL = `${API}/surah/${surahNumber}`;
+
+  try {
+    const response = await fetch(URL);
+    return response.json();
+  } catch (error) {
+    console.error("Failed to fetch ayah data:", error);
+    return null;
+  }
+}
+
+async function fetchChapters() {
+  const URL = `${API}/surahs`;
+
+  try {
+    const response = await fetch(URL);
+    return response.json();
+  } catch (error) {
+    console.error("Failed to fetch chapters data:", error);
+    return null;
+  }
+}
+
 function countAyah(ayahText) {
   let count = 0;
 
@@ -10,7 +36,7 @@ function countAyah(ayahText) {
   return count + 1;
 }
 
-function seperateAyah(ayahText) {
+function separateAyah(ayahText) {
   const words = ayahText.split(" ");
   const chunks = [];
 
@@ -22,4 +48,4 @@ function seperateAyah(ayahText) {
   return chunks;
 }
 
-export { countAyah, seperateAyah };
+export { countAyah, separateAyah, fetchAyahData, fetchChapters };
