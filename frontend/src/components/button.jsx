@@ -3,11 +3,11 @@ import React from "react";
 export const Button = () => {
   return (
     <button
-      className="all-[unset] box-border inline-flex items-center justify-center px-6 py-2 relative bg-[#d4e7f2] rounded-[32px]"
+      className="inline-flex items-center justify-center px-6 py-2 bg-[#d4e7f2] rounded-2xl"
       type="button"
       aria-label="Stop"
     >
-      <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins-Medium',Helvetica] font-medium text-[#000000f2] text-lg text-center tracking-[0] leading-[19.8px] whitespace-nowrap">
+      <div className="w-fit font-medium text-[#000000f2] text-lg text-center whitespace-nowrap">
         Stop
       </div>
     </button>
