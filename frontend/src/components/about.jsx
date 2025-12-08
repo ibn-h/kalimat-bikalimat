@@ -1,16 +1,13 @@
 import React from "react";
-// import quran from "../assets/svg/quran.svg";
+import quran from "../assets/svg/quran.png";
 
 function About() {
   return (
     <section className="flex flex-col items-center gap-4 p-6 bg-neutral-100 rounded-2xl max-w-[978px] w-full">
-      <div className="flex items-center gap-6 w-full">
-        {/* <div
-          className="relative w-[183px] h-[180px] bg-[url(/quran.svg)] bg-position-[100%_100%]"
-          role="img"
-          aria-label="Kalimat Bikalimat logo"
-        /> */}
-
+      <div className="flex gap-6 w-full flex-col text-left items-start sm:flex-row sm:items-center">
+        <div>
+          <img src={quran} alt="Quran" className="w-full" />
+        </div>
         <div className="flex flex-col items-start gap-4 flex-1">
           <h1 className="font-semibold text-4xl text-variable-collection-black-95">
             Kalimat Bikalimat

@@ -24,10 +24,8 @@ function SurahPage() {
     getAyahData();
   }, [id]);
 
-  console.log(ayahData);
-
   return (
-    <div className="bg-amber-50 min-h-screen p-8">
+    <div className="min-h-screen p-8">
       <div className="flex flex-col gap-10 items-center justify-center">
         <h1 className="text-5xl">{ayahData.surah.name_english}</h1>
         <SurahNavigation id={id} />
