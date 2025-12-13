@@ -31,8 +31,3 @@
 body {
   font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
-
-.button {
-  @apply px-4 py-2 rounded-md text-white font-medium;
-  background-color: var(--color-celadon-blue);
-}

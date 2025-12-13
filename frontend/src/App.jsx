@@ -6,12 +6,7 @@ import MemorizePage from "./pages/memorizePage.jsx";
 
 function App() {
   return (
-    <Router
-      basename={
-        // eslint-disable-next-line no-undef
-        process.env.NODE_ENV === "production" ? "/kalimat-bikalimat/" : "/"
-      }
-    >
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<SurahPage />} />

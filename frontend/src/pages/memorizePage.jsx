@@ -25,12 +25,12 @@ function MemorizePage() {
   }
 
   return (
-    <div className="bg-amber-50 min-h-screen p-8">
+    <div className="min-h-screen p-8">
       <div className="flex flex-col gap-10 items-center justify-center">
         <h1 className="text-5xl">Memorize {ayahData.surah.name_english}</h1>
         <a
           href={`/${id}`}
-          className="px-3 py-1 bg-red-300 rounded cursor-pointer"
+          className="text-base px-4 py-2 rounded-md text-white font-medium cursor-pointer bg-celadon-blue"
         >
           Stop
         </a>
@@ -46,7 +46,7 @@ function MemorizePage() {
                 Math.min(prev + 1, ayahData.ayahs.length || 1)
               )
             }
-            className="px-3 py-1 bg-gray-300 rounded cursor-pointer"
+            className="text-base px-4 py-2 rounded-md text-white font-medium cursor-pointer bg-celadon-blue"
           >
             Next Ayah
           </button>
